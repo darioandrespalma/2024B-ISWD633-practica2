@@ -63,6 +63,14 @@ Ingresar a: http://localhost:9300/
 recordar que a es el puerto que usó para el mapeo con wordpress
 # COLOCAR UNA CAPTURA DEL SITO EN DONDE SEA VISIBLE LA PUBLICACIÓN.
 
+![Imagen](img/Pagina.png)
+
+![Imagen](img/Pagina2.png)
+
+![Imagen](img/Pagina3.png)
+
+![Imagen](img/Pagina4.png)
+
 ### Eliminar el contenedor wordpress
 
 Para eliminar el contenedor de WordPress, usamos el siguiente comando:
