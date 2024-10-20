@@ -22,7 +22,7 @@ docker run -d --name jenkins-server --publish published=8080,target=8080 --publi
 
 ![Imagen](img/CrearContenedorJenkins.png)
 
-![Imagen](img/VerificacionCreacionJenkins.png)
+![Imagen](img/VerficacionCreacionJenkins.png)
 
 ![Imagen](img/localhost8080.png)
 
