@@ -96,7 +96,9 @@ Ejecutar
 ```
 whoami
 ```
-# COLOCAR UNA CAPTURA DE PANTALLA
+
+![Imagen](img/ComandoSh.png)
+
 
 **Si se visualiza el mensaje command not found, considerar**
 El problema se debe a que no se ha asignado un terminal de salida al contenedor al ejecutar el comando. Cuando usas docker exec -i jenkins-server /bin/bash en Windows, el comando se ejecuta pero no hay un terminal asignado para mostrar la salida del comando ls.
@@ -114,13 +116,17 @@ docker exec -i-t <nombre contenedor> <programa o comando>
 docker exec -it <nombre contenedor> <programa o comando>
 ```
 
-### Ahora puedes acceder al contenedor de jenkins y obtener la contraseña ubicada en /var/jenkins_home/secrets/initialAdminPassword
+```
+docker exec -it jenkins-server sh
+```
 
-# COMPLETAR
+![Imagen](img/ObtenerContra8080.png)
+
+### Ahora puedes acceder al contenedor de jenkins y obtener la contraseña ubicada en /var/jenkins_home/secrets/initialAdminPassword
 
 ### Colocar una captura de pantalla de la ventana que aparece después de colocar la contraseña.
 
-**Para este punto no es necesario continuar con la instalación de Jenkins**
+![Imagen](img/Ingreso8080.png)
 
 
 ### Para ver los logs de un contenedor
@@ -130,7 +136,11 @@ docker logs -n <cantidad de líneas> <nombre o id del contenedor>
 ```
 -t: para incluir la fecha y la hora
 
+```
+docker logs -n 100 jenkins-server
+```
 
+![Imagen](img/logs.png)
 
-
+![Imagen](img/logs1.png)
 
