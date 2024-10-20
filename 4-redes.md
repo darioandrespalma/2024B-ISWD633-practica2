@@ -129,7 +129,7 @@ docker network rm <nombre de la red>
 docker network rm red1
 ```
 
-![Imagen](img/FinalElimincionrRed1.png)
+![Imagen](img/FinalEliminacionrRed1.png)
 
   
 * Eliminar la red red2:
