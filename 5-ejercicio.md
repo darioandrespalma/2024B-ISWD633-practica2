@@ -9,7 +9,7 @@ Primero, creamos la red net-wp donde se conectarán ambos contenedores, MySQL y 
 docker network create net-wp
 ```
 
-![Imagen](img/esquema-ejercicio5.png)
+![Imagen](img/CrearRed.png)
 
 
 ### Crear el contenedor mysql a partir de la imagen mysql:8, configurar las variables de entorno necesarias
@@ -25,7 +25,7 @@ docker run -d --name mysql-server --network net-wp \
   mysql:8
 ```
 
-![Imagen](img/esquema-ejercicio5.png)
+![Imagen](img/CrearMysql.png)
 
 
 ### Crear el contenedor wordpress a partir de la imagen: wordpress, configurar las variables de entorno necesarias
@@ -42,7 +42,7 @@ docker run -d --name wordpress-server --network net-wp \
   wordpress
 ```
 
-![Imagen](img/esquema-ejercicio5.png)
+![Imagen](img/CrearWord.png)
 
 De acuerdo con el trabajo realizado, en la el esquema de ejercicio el puerto a es **(completar con el valor)**
 
@@ -54,7 +54,7 @@ http://localhost:9300
 
 Completamos la instalación de WordPress siguiendo los pasos que te solicite (idioma, nombre del sitio, usuario administrador, etc.).
 
-![Imagen](img/esquema-ejercicio5.png)
+![Imagen](img/Pagina.png)
 
 
 
