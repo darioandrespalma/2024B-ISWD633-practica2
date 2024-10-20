@@ -1,8 +1,12 @@
 # Variables de Entorno
 ### ¿Qué son las variables de entorno
-# COMPLETAR
+
+Las variables de entorno son valores dinámicos que afectan el comportamiento de procesos o aplicaciones en el sistema operativo. Son un método para almacenar información que puede ser utilizada por varios programas y procesos. En el contexto de Docker, las variables de entorno se pueden usar para configurar un contenedor de manera más flexible, sin necesidad de modificar su código.
+
 
 ### Para crear un contenedor con variables de entorno?
+
+Para crear un contenedor con variables de entorno, puedes usar el comando -e para cada variable que quieras definir.
 
 ```
 docker run -d --name <nombre contenedor> -e <nombre variable1>=<valor1> -e <nombre variable2>=<valor2>
