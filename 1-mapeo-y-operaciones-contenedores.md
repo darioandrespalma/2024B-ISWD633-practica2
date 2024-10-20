@@ -57,10 +57,12 @@ El argumento -l (long format) le dice al comando ls que muestre la información 
 
 ### Usar el contenedor de jenkins creado previamente y ejecutar el comando ls con el argumento -l
 
+```
+docker exec jenkins-server ls -l
+```
 
+![Imagen](img/ListarArchivos.png)
 
-# COMPLETAR
-# COLOCAR UNA CAPTURA DE PANTALLA
 
 ### Para ejecutar un shell interactivo en un contenedor de Docker especificado.
 El comando **docker exec** te permite acceder a la sesión shell de un contenedor en ejecución, estarás dentro del contenedor y podrás ejecutar comandos como si estuvieras en una terminal normal. 
