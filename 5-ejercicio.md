@@ -64,16 +64,53 @@ recordar que a es el puerto que usó para el mapeo con wordpress
 # COLOCAR UNA CAPTURA DEL SITO EN DONDE SEA VISIBLE LA PUBLICACIÓN.
 
 ### Eliminar el contenedor wordpress
-# COMPLETAR
+
+Para eliminar el contenedor de WordPress, usamos el siguiente comando:
+
+```
+docker rm -f wordpress-server
+```
+
+![Imagen](img/EliminarWord.png)
 
 ### Crear nuevamente el contenedor wordpress
+
+```
+docker run -d --name wordpress-server --network net-wp `
+  -e WORDPRESS_DB_HOST=mysql-server `
+  -e WORDPRESS_DB_NAME=wordpress `
+  -e WORDPRESS_DB_USER=user123 `
+  -e WORDPRESS_DB_PASSWORD=user-password `
+  -p 9300:80 `
+  wordpress
+```
+
+![Imagen](img/NuevoWord.png)
+
+
 Ingresar a: http://localhost:9300/ 
 recordar que a es el puerto que usó para el mapeo con wordpress
 
+![Imagen](img/NuevaPagina.png)
+
+
+
 ### ¿Qué ha sucedido, qué puede observar?
-# COMPLETAR
 
+Al eliminar el contenedor de WordPress, también se eliminan los datos de configuración del sitio y las publicaciones. Si vuelves a crear el contenedor sin un volumen persistente, WordPress se comportará como si fuera una instalación nueva, por lo que no verás el tema cambiado ni la publicación que creaste previamente.
 
+### Solución:
+Para evitar perder los datos, debes crear el contenedor con un volumen montado que almacene los archivos de WordPress.
 
+```
+docker run -d --name wordpress-server --network net-wp \
+  -e WORDPRESS_DB_HOST=mysql-server \
+  -e WORDPRESS_DB_NAME=wordpress \
+  -e WORDPRESS_DB_USER=user123 \
+  -e WORDPRESS_DB_PASSWORD=user-password \
+  -p 9300:80 \
+  -v wordpress-data:/var/www/html \
+  wordpress
+```
 
-
+Con este comando, los datos se almacenarán en el volumen llamado wordpress-data, y al recrear el contenedor, los datos permanecerán intactos.
