@@ -120,7 +120,7 @@ docker exec -it <nombre contenedor> <programa o comando>
 docker exec -it jenkins-server sh
 ```
 
-![Imagen](img/ObtenerContra8080.png)
+![Imagen](img/ObetnerContra8080.png)
 
 ### Ahora puedes acceder al contenedor de jenkins y obtener la contraseña ubicada en /var/jenkins_home/secrets/initialAdminPassword
 
