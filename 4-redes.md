@@ -9,15 +9,57 @@ Las redes son un componente fundamental que permite la comunicación entre conte
 
 ### Crear una red de tipo bridge
 
+Primero, vamos a crear las redes personalizadas que se indican en el esquema. Para cada red, podemos usar el siguiente comando.
+
 ```
-docker network create <nombre red> -d bridge
+docker network create red1 -d bridge
 ```
+
+![Imagen](img/PrimeroRed.png)
+
+```
+docker network create red2 -d bridge
+```
+
+![Imagen](img/SegundaRed.png)
+
+```
+docker network create red3 -d bridge
+```
+
+![Imagen](img/TerceraRed.png)
 
 ### Crear un contenedor vinculado a una red
 
 ```
 docker run -d --name <nombre contenedor> --network <nombre red> <nombre imagen>
 ```
+
+Aplicamos este comando para crear los contenedores vinculados a las redes.
+
+Crear el primer contenedor y vincularlo a la red red1:
+
+```
+docker run -d --name contenedor1 --network red1 nginx:alpine
+```
+
+![Imagen](img/CrearContenedorRed1.png)
+
+Crear el segundo contenedor y vincularlo a la red red2:
+
+```
+docker run -d --name contenedor2 --network red1 nginx:alpine
+```
+
+![Imagen](img/CrearContenedorRed2.png)
+
+Crear el tercer contenedor y vincularlo a la red red3:
+
+```
+docker run -d --name contenedor3 --network red1 nginx:alpine
+```
+
+![Imagen](img/CrearContenedorRed3.png)
 
 ### Para saber a qué red está conectado un contenedor
 
