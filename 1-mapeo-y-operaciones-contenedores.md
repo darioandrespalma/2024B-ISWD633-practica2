@@ -39,8 +39,26 @@ docker exec <nombre contenedor> <comando> <argumentos opcionales>
 ```
 # COMPLETAR
 ### ¿Para qué se usa el comando ls?
+
+El comando ls se utiliza en sistemas Unix y Linux para listar los archivos y directorios en el directorio actual. Es una de las herramientas más comunes y útiles para ver el contenido de un directorio.
+
 ### ¿Para qué sirve el argumento -l junto al comando ls?
+
+El argumento -l (long format) le dice al comando ls que muestre la información en un formato detallado. Esto incluye:
+
+* Tipo de archivo (por ejemplo, d para directorios).
+* Permisos de archivo.
+* Número de enlaces.
+* Propietario del archivo.
+* Grupo del archivo.
+* Tamaño del archivo (en bytes).
+* Fecha y hora de la última modificación.
+* Nombre del archivo o directorio.
+
 ### Usar el contenedor de jenkins creado previamente y ejecutar el comando ls con el argumento -l
+
+
+
 # COMPLETAR
 # COLOCAR UNA CAPTURA DE PANTALLA
 
