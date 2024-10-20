@@ -71,6 +71,26 @@ docker inspect <nombre contenedor>
 docker network inspect <nombre red> 
 ```
 
+  
+* Inspeccionar la red: Para verificar qué contenedores están conectados a una red, usa:
+
+```
+docker network inspect <nombre red>
+```
+
+![Imagen](img/InspeccionRed1.png)
+  
+* Inspeccionar un contenedor: Para ver la red a la que está conectado un contenedor:
+
+```
+docker inspect <nombre-contenedor>
+```
+
+![Imagen](img/InspeccionRed2.png)
+
+![Imagen](img/InspeccionRed3.png)
+
+
 ### Vincular contenedor a una red
 ```
 docker network connect <nombre red> <nombre contenedor>
@@ -86,16 +106,45 @@ docker network disconnect <nombre red> <nombre contenedor>
 docker network ls
 ```
 
+![Imagen](img/InspeccionRed.png)
+
 ### Crear los contenedores y las redes que se presentan en el esquema. Usar para todos los contenedores la imagen de nginx:alpine
 
 ![Imagen](img/esquema-ejercicio-redes.PNG)
 
 # COLOCAR UNA CAPTURA DE LAS REDES EXISTENTES CREADAS
 
-# COLOCAR UNA(S) CAPTURAS(S) DE LOS CONTENEDORES CREADOS EN DONDE SE EVIDENCIE A QUÉ RED ESTÁN VINCULADOS
+![Imagen](img/ListaContenedoresActivos.png)
+
 
 ### Para eliminar las redes creadas
 ```
 docker network rm <nombre de la red>
 ```
+
+
+* Eliminar la red red1:
+
+```
+docker network rm red1
+```
+
+![Imagen](img/FinalElimincionrRed1.png)
+
+  
+* Eliminar la red red2:
+
+```
+docker network rm red2
+```
+
+![Imagen](img/EliminarRed2.png)
+
+* Eliminar la red red3:
+
+```
+docker network rm red3
+```
+
+![Imagen](img/EliminarRed2.png)
 
