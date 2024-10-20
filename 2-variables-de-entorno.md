@@ -18,21 +18,55 @@ docker run -d --name <nombre contenedor> -e <nombre variable1>=<valor1> -e <nomb
 docker run -d --name nginx-server -e username='user123' -e role='admin' nginx:alpine
 ```
 
-# COMPLETAR
+![Imagen](img/CrearContenedorNginx.png)
 
 # CAPTURA CON LA COMPROBACIÓN DE LA CREACIÓN DE LAS VARIABLES DE ENTORNO DEL CONTENEDOR ANTERIOR
 
+Para comprobar que las variables de entorno se han creado correctamente dentro del contenedor, ejecutamos el siguiente comando:
+
+```
+docker exec nginx-server printenv
+```
+
+![Imagen](img/VerificacionVariablesEntorno.png)
+
 ### Crear un contenedor con mysql:8 , mapear todos los puertos
-# COMPLETAR
+
+```
+docker run -d --name mysql-server -P mysql:8
+```
+
+![Imagen](img/ContenedorSQL.png)
 
 ### ¿El contenedor se está ejecutando?
-# COMPLETAR
+
+Para verificar si el contenedor está en ejecución, utilizamos el siguiente comando:
+
+```
+docker ps
+```
+
+![Imagen](img/VerificacionEjecucion.png)
 
 ### Identificar el problema
-# COMPLETAR
+
+Si el contenedor no está en ejecución, utilizamos el siguiente comando para ver los logs del contenedor y diagnosticar el problema:
+
+```
+docker logs mysql-server
+```
+
+![Imagen](img/IdentificarProblema.png)
 
 ### Eliminar el contenedor creado con mysql:8 
-# COMPLETAR
+
+Si el contenedor no se está ejecutando correctamente y deseas eliminarlo, utilizamos el siguiente comando:
+
+```
+docker rm -f mysql-server
+```
+
+![Imagen](img/EliminarSQL.png)
 
 ### Para crear un contenedor con variables de entorno especificadas
 - Portabilidad: Las aplicaciones se vuelven más portátiles y pueden ser desplegadas en diferentes entornos (desarrollo, pruebas, producción) simplemente cambiando el archivo de variables de entorno.
@@ -49,9 +83,38 @@ docker run -d --name <nombre contenedor> --env-file=<nombreArchivo>.<extensión>
 Es necesario especificar la ruta absoluta del archivo si este se encuentra en una ubicación diferente a la que estás ejecutando el comando docker run.
 
 ### Crear un contenedor con mysql:8 , mapear todos los puertos y configurar las variables de entorno mediante un archivo
-# COMPLETAR
 
-# CAPTURA CON LA COMPROBACIÓN DE LA CREACIÓN DE LAS VARIABLES DE ENTORNO DEL CONTENEDOR ANTERIOR 
+* Crea un archivo .env con las variables necesarias. Por ejemplo, podemos crear un archivo mysql.env con el siguiente contenido:
+
+```
+MYSQL_ROOT_PASSWORD=my-secret-pw
+MYSQL_DATABASE=mydb
+MYSQL_USER=user123
+MYSQL_PASSWORD=user-password
+```
+
+* Ejecutamos el siguiente comando para crear el contenedor de MySQL usando este archivo de variables de entorno:
+
+```
+docker run -d --name mysql-server --env-file=./mysql.env -P mysql:8
+```
+
+Esto creará el contenedor utilizando las variables definidas en mysql.env.
+
+![Imagen](img/VerificacionVariablesMysql.png)
+
+![Imagen](img/VerificacionVariablesMysql2.png)
 
 ### ¿Qué bases de datos existen en el contenedor creado?
-# COMPLETAR
+
+Para listar las bases de datos que existen en el contenedor de MySQL, seguimos los siguientes pasos:
+* Abrimos una shell interactiva dentro del contenedor de MySQL:
+  ```
+  docker exec -it mysql-server mysql -u root -p
+  ```
+* Introducimos la contraseña de root que definiste en el archivo .env.
+* Una vez dentro del shell de MySQL, ejecuta el siguiente comando para listar las bases de datos:
+  ```
+  SHOW DATABASES;
+  ```
+![Imagen](img/BasesDatos1.png)
